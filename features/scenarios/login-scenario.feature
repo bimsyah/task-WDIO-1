@@ -18,8 +18,10 @@ Feature: Demoblaze app Login Scenario
       | Nokia lumia 1520  |        1 |
 
     # log out
+    @logout
   Scenario: Login and then Logout account
     Given I am on the front page
     When I try to login with username "bimasyah" and password "bimahore"
     Then I am successfully login with username "bimasyah"
-    Then I am successfully logged out
+    When I am click logged out and back to the frontpage
+    # Then I am successfully logged out and go to front page

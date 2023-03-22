@@ -27,9 +27,16 @@ Then('I am successfully login with username {string}', async(username) => {
   await HomePage.verifyLoginSuccess(username)
 })
 
-Then('I am successfully logged out', async() => {
+When('I am click logged out and back to the frontpage', async() => {
+    await browser.pause(2000)
     await HomePage.clickBtnLogOut()
+    await browser.pause(1000)
 })
+
+// Then('I am successfully logged out and go to front page', async() => {
+//     await FrontPage()
+//     // Write code here that turns the phrase above into concrete actions
+//   })
 
 When('I add items to cart:', async(table) => {
     let data = table.hashes()
@@ -40,6 +47,8 @@ When('I add items to cart:', async(table) => {
         await ProductDetailPage.clickBackToProductList()
     }
 })
+
+
 
 // When(/^I try to login with username \"(.*)\" and password \"(.*)\"$/, async(username, password) => {
 //     await FrontPage.login(username, password)

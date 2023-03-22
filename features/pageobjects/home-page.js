@@ -8,7 +8,7 @@ class HomePage extends Page {
     }
 
     get buttonLogout() {
-        return $(`[onclick='logOut()']`)
+        return $(`//a[.='Log out']`)
     }
 
     async buttonItemName(itemName){
